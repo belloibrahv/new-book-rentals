@@ -1,0 +1,484 @@
+:root {
+  --primary-color: #002f5d;
+  --secondary-color: #f5f5f5;
+  --text-color: #333;
+  --text-color2: #fff;
+  --text-light: #666;
+  --border-color: #ddd;
+  --max-width: 1200px;
+  --card-width: 250px;
+  --border-color: #ddd;
+}
+
+body, html, #root {
+  padding: 0;
+  margin: 0;
+}
+
+/* Homepage Styles */
+.home-page {
+  max-width: var(--max-width);
+  margin: 0 auto;
+  padding: 2rem 1rem;
+}
+
+.books-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+  gap: 2rem;
+  padding: 2rem 0;
+}
+
+.book-card {
+  text-decoration: none;
+  color: var(--text-color);
+  background: white;
+  border-radius: 8px;
+  overflow: hidden;
+  box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+  transition: transform 0.2s;
+}
+
+.book-card:hover {
+  transform: translateY(-5px);
+}
+
+.book-cover {
+  width: 100%;
+  height: 300px;
+  object-fit: cover;
+}
+
+.book-info {
+  padding: 1rem;
+}
+
+/* Book Details Styles */
+.book-details {
+  display: grid;
+  grid-template-columns: 300px 1fr;
+  gap: 2rem;
+  padding: 2rem;
+}
+
+.book-cover-large {
+  width: 100%;
+  height: auto;
+  border-radius: 8px;
+}
+
+.book-info-detailed {
+  padding: 1rem;
+}
+
+.rent-button {
+  background: var(--primary-color);
+  color: white;
+  padding: 0.8rem 1.5rem;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+  font-size: 1.1rem;
+}
+
+
+/* My Rentals Styles */
+.my-rentals {
+  padding: 2rem;
+}
+
+.rental-item {
+  display: grid;
+  grid-template-columns: 100px 1fr;
+  gap: 1rem;
+  padding: 1rem;
+  border: 1px solid var(--border-color);
+  border-radius: 4px;
+  margin-bottom: 1rem;
+}
+
+.rental-item img {
+  width: 100%;
+  height: auto;
+}
+
+.payment-status {
+  padding: 0.5rem;
+  border-radius: 4px;
+  display: inline-block;
+}
+
+.payment-status.paid {
+  background-color: #e6ffe6;
+  color: #006600;
+}
+
+.payment-status.pending {
+  background-color: #fff3e6;
+  color: #cc7700;
+}
+
+.rental-cover {
+  width: 100px;
+  height: 150px;
+  object-fit: cover;
+  border-radius: 4px;
+}
+
+/* Hide mobile toggle by default */
+.mobile-menu-toggle {
+  display: none;
+}
+
+/* Modal Styles */
+
+.modal-overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.5);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 1000;
+}
+
+.modal {
+  background-color: white;
+  border-radius: 8px;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  width: 100%;
+  max-width: 500px;
+  max-height: 90vh;
+  padding: 20px;
+  box-sizing: border-box;
+  overflow-y: auto;
+  position: relative;
+}
+
+.modal h2 {
+  margin-top: 0;
+  margin-bottom: 20px;
+  text-align: center;
+  color: #333;
+}
+
+.form-group {
+  margin-bottom: 15px;
+}
+
+.form-group label {
+  display: block;
+  margin-bottom: 5px;
+  color: #555;
+}
+
+.form-group input {
+  width: 100%;
+  padding: 8px;
+  border: 1px solid #ddd;
+  border-radius: 4px;
+  box-sizing: border-box;
+}
+
+.payment-options {
+  display: flex;
+  justify-content: space-around;
+  margin-bottom: 15px;
+}
+
+.payment-options label {
+  display: flex;
+  align-items: center;
+}
+
+.payment-options input[type="radio"] {
+  margin-right: 5px;
+}
+
+.error-text {
+  color: red;
+  font-size: 0.8em;
+  margin-top: -10px;
+  margin-bottom: 10px;
+}
+
+.modal-actions {
+  display: flex;
+  justify-content: space-between;
+  margin-top: 20px;
+}
+
+.submit-button, .cancel-button {
+  padding: 10px 15px;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+.submit-button {
+  background-color: #4CAF50;
+  color: white;
+}
+
+.submit-button:hover {
+  background-color: #45a049;
+}
+
+.cancel-button {
+  background-color: #f44336;
+  color: white;
+}
+
+.cancel-button:hover {
+  background-color: #d32f2f;
+}
+
+@media (max-width: 600px) {
+  .modal {
+      width: 95%;
+      margin: 0 10px;
+      max-height: 95vh;
+  }
+
+  .modal-actions {
+      flex-direction: column;
+  }
+
+  .submit-button, .cancel-button {
+      width: 100%;
+      margin-bottom: 10px;
+  }
+}
+
+/* Footer Styles */
+
+.footer {
+  background-color: #002f5d;
+  color: white;
+  padding: 2rem 1rem;
+}
+
+.footer-container {
+  max-width: 1200px;
+  margin: 0 auto;
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
+}
+
+.footer-top {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+  gap: 2rem;
+}
+
+.footer-brand h3 {
+  font-size: 1.5rem;
+  margin-bottom: 0.5rem;
+}
+
+.footer-brand p {
+  font-size: 1rem;
+  color: #ddd;
+}
+
+.footer-links h4 {
+  font-size: 1.2rem;
+  margin-bottom: 0.5rem;
+}
+
+.footer-links a {
+  display: block;
+  margin-bottom: 0.5rem;
+  text-decoration: none;
+  color: #ddd;
+  font-size: 1rem;
+}
+
+.footer-links a:hover {
+  color: #ffffff;
+  text-decoration: underline;
+}
+
+.footer-bottom {
+  text-align: center;
+  font-size: 0.9rem;
+  color: #aaa;
+}
+
+@media (max-width: 768px) {
+  .footer-top {
+    grid-template-columns: 1fr;
+  }
+
+  .footer-brand {
+    text-align: center;
+  }
+
+  .footer-links {
+    text-align: center;
+  }
+}
+
+:root {
+  --secondary-color: #2563eb;
+  --hover-color: rgba(255, 255, 255, 0.1);
+}
+
+.navbar {
+  margin: 0;
+  padding: 0;
+  width: 100%;
+  background-color: var(--primary-color);
+  padding: 1rem 2rem;
+  z-index: 100;
+  transition: all 0.3s ease;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+.navbar.scrolled {
+  background-color: var(--secondary-color);
+  padding: 0.75rem 2rem;
+}
+
+.nav-container {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+.nav-brand .brand-link {
+  text-decoration: none;
+  color: var(--text-color2);
+}
+
+.logo-container {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+}
+
+.logo-icon {
+  transition: transform 0.3s ease;
+}
+
+.logo-container:hover .logo-icon {
+  transform: rotate(360deg);
+}
+
+.logo-text {
+  font-size: 1.5rem;
+  font-weight: bold;
+  letter-spacing: -1px;
+}
+
+.nav-links {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+}
+
+.nav-link {
+  color: var(--text-color2);
+  text-decoration: none;
+  padding: 0.5rem 1rem;
+  border-radius: 4px;
+  position: relative;
+  transition: all 0.3s ease;
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+}
+
+.nav-link:hover {
+  background-color: var(--hover-color);
+  transform: scale(1.05);
+}
+
+.rentals-badge {
+  background-color: var(--text-color2);
+  color: var(--primary-color);
+  font-size: 0.75rem;
+  padding: 0.2rem 0.5rem;
+  border-radius: 12px;
+  margin-left: 0.5rem;
+}
+
+.mobile-menu-toggle {
+  display: none;
+  color: var(--text-color2);
+  cursor: pointer;
+}
+
+@media (max-width: 768px) {
+  .mobile-menu-toggle {
+    display: block;
+  }
+
+  .nav-links {
+    display: none;
+    flex-direction: column;
+    position: absolute;
+    top: 100%;
+    left: 0;
+    width: 100%;
+    background-color: var(--primary-color);
+    padding: 1rem;
+  }
+
+  .nav-links.active {
+    display: flex;
+  }
+
+  .nav-link {
+    width: 100%;
+    text-align: center;
+    padding: 1rem;
+  }
+}
+
+/* Payment Details */
+
+.payment-details {
+  position: relative;
+  margin-top: 20px;
+}
+
+.card-icons {
+  position: absolute;
+  top: -30px;
+  right: 0;
+  display: flex;
+  gap: 10px;
+}
+
+.card-icon {
+  font-size: 24px;
+  opacity: 0.3;
+  transition: opacity 0.3s ease;
+}
+
+.card-icon.active {
+  opacity: 1;
+}
+
+.payment-row {
+  display: flex;
+  gap: 15px;
+}
+
+.payment-row .form-group {
+  flex: 1;
+}
+
+.error-text {
+  color: #ff4d4d;
+  font-size: 0.8em;
+  margin-top: 5px;
+}
