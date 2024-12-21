@@ -118,7 +118,7 @@ const RentalModal = ({ book, onClose, onComplete }) => {
             }
           : { cardNumber: '', expiryDate: '', cvv: '' },
       },
-      isInFinalPage: false,
+      isInFinalPage: true,
     };
 
     window.currentBookingInfo = currentBookingInfo;
